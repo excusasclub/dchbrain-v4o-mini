@@ -161,88 +161,110 @@ sk-yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 
 ## Uso
 
-1. Preparar las keywords
+### 1. Preparar las keywords
+Edita el archivo `1. Keywords.txt` y añade una keyword por línea:
 
-Edita `1. Keywords.txt` y añade una keyword por línea:
+(tildes)text  
+ideas para ahorrar energía en casa  
+cómo elegir un portátil para programar  
+beneficios del ejercicio al aire libre  
+(tildes)
 
-ideas para ahorrar energía en casa
+---
 
-cómo elegir un portátil para programar
+### 2. Titularizar
+Genera los títulos SEO a partir de las keywords:
 
-beneficios del ejercicio al aire libre
+```
+python "_2. Titularizar.py"  
+```
 
-2. Titularizar
+Este script crea un archivo `2. Titulos.csv` con los títulos optimizados según cada palabra clave.
 
-python "_2. Titularizar.py"
+---
 
-Este script generará un archivo `2. Titulos.csv` donde habrá genera un título SEO en base a cada keyword
+### 3. Generar artículos
+Crea los artículos completos en HTML:
 
-3. Generar artículos
+(tildes)bash  
+python "_3. Entradas.py"  
+(tildes)
 
-python "_3. Entradas.py"
+Este script:  
+1. Lee `2. Titulos.csv`.  
+2. Llama a la API de OpenAI usando los prompts de `0. Sistema`, `1. Usuario` y `2. Asistente`.  
+3. Genera los artículos y los guarda en `3. Articulos.csv`.
 
-Este script:
-- 3.1 Lee `2. Titulos.csv`
-- 3.2 Llama a la API de OpenAI usando los prompts de 0. Sistema, 1. Usuario y 2. Asistente.
-- 3.3 Genera el contenido y lo guarda en `3. Articulos.csv`
+---
 
-4. Añadir vídeos de YouTube
+### 4. Añadir vídeos de YouTube
+Asocia vídeos relevantes a cada artículo:
 
-python "_4. YouTube.py"
+(tildes)bash  
+python "_4. YouTube.py"  
+(tildes)
 
-Este script:
-- 4.1 Lee 3. Articulos.csv.
-- 4.2 Busca un vídeo relevante para cada artículo.
-- 4.3 Añade el código de inserción del vídeo en el contenido.
+Este script:  
+1. Lee `3. Articulos.csv`.  
+2. Busca un vídeo relevante en YouTube.  
+3. Inserta el código de vídeo en el contenido HTML del artículo.
 
-5. Asignar fechas y autores
+---
 
-python "_5. Fechas.py"
+### 5. Asignar fechas y autores
+Ejecuta ambos scripts para completar la información de publicación:
 
-python "_6. Autores.py"
+(tildes)bash  
+python "_5. Fechas.py"  
+python "_6. Autores.py"  
+(tildes)
 
-Estos scripts añaden columnas de fecha y autor a 3. Articulos.csv.
+Estos scripts añaden columnas de **fecha** y **autor** a `3. Articulos.csv`.
 
-6. Generar imágenes
+---
 
-python "_7. Imagen.py"
+### 6. Generar imágenes
+Crea las imágenes personalizadas para cada artículo:
 
-Este script:
-- 6.1 Lee el título o información relevante de cada artículo.
-- 6.2 Llama a la API de imágenes de OpenAI.
-- 6.3 Guarda cada imagen en 3. Portadas/.
-- 6.4 Opcionalmente añade la referencia de la imagen al CSV de artículos.
+(tildes)bash  
+python "_7. Imagen.py"  
+(tildes)
 
-Resultado final:
+Este script:  
+1. Lee el título o la información relevante del artículo.  
+2. Llama a la API de imágenes de OpenAI.  
+3. Guarda la imagen en `3. Portadas/`.  
+4. (Opcional) Añade la ruta de la imagen al CSV final.
 
- - Articulos.csv con todos los campos necesarios para tu CMS.
+---
 
- - Portadas/ con las imágenes asociadas.
+### Resultado final
 
-Personalización de prompts
+- `3. Articulos.csv` contiene los artículos listos para tu CMS.  
+- `3. Portadas/` guarda todas las imágenes generadas.
 
-Los prompts se organizan en tres carpetas:
+---
 
-- 0 Sistema: instrucciones de alto nivel para el modelo (rol del sistema).
+## Personalización de prompts
 
-- 1 Usuario: instrucciones que simulan la petición del usuario.
+Los prompts definen el estilo, tono y enfoque de los textos generados.  
+Están organizados en tres carpetas:
 
-- 2 Asistente: ejemplos o ajustes de tono del asistente.
+- `0. Sistema`: instrucciones de alto nivel para el modelo (rol del sistema).  
+- `1. Usuario`: instrucciones que simulan la petición del usuario.  
+- `2. Asistente`: ejemplos o ajustes de tono del asistente.  
 
-Cada carpeta contiene ficheros separados para:
+Cada carpeta contiene los siguientes archivos:
 
-- 0 Titulo.txt
+- `0. Titulo.txt`  
+- `1. Imagen.txt`  
+- `2. Estructura.txt`  
+- `3. Cuerpo.txt`  
+- `4. Descripcion.txt`  
+- `5. Categoria.txt`  
 
-- 1 Imagen.txt
+Puedes modificar cualquiera de estos archivos para cambiar el tono, estilo y reglas de redacción sin alterar el código Python.
 
-- 2 Estructura.txt
+---
 
-- 3 Cuerpo.txt
-
-- 4 Descripcion.txt
-
-- 5 Categoria.txt
-
-Editando estos ficheros puedes cambiar el estilo de escritura, el enfoque del contenido, el tono de las descripciones y las reglas de clasificación sin tocar el código Python.
-
-**made by Pedro Corchuelo**
+**Made by Pedro Corchuelo**
