@@ -116,7 +116,7 @@ El archivo de salida principal es `3. Articulos.csv` (generado por `_3. Entradas
 
 Los directorios `0. Sistema`, `1. Usuario` y `2. Asistente` contienen los prompts que definen cómo se comporta el modelo en cada parte del proceso.
 
----
+.........................................................................................
 
 ## Requisitos
 
@@ -135,22 +135,34 @@ Los directorios `0. Sistema`, `1. Usuario` y `2. Asistente` contienen los prompt
 
 ## Instalación
 
-**Clonar el repositorio:**
+### Clonar el repositorio:
+```bash
 git clone https://github.com/tu-usuario/dchbrain-v4o-mini.git
 
 cd dchbrain-v4o-mini
+```
 
-**Crear y activar un entorno virtual**
+### Crear y activar un entorno virtual
+```bash
 python -m venv venv
-**Linux / macOS**
+```
+
+### Linux / macOS
+```bash
 source venv/bin/activate
-**Windows**
+```
+
+### Windows
+```bash
 venv\Scripts\activate
+```
 
 ## Instalar dependencias:
+```bash
 pip install -r requirements.txt
+```
 
-**Configuración de claves de API**
+## Configuración de claves de API
 El archivo 0. GPTs.txt almacena las claves de la API de OpenAI.
 
 Formato:
@@ -164,71 +176,71 @@ sk-yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 ### 1. Preparar las keywords
 Edita el archivo `1. Keywords.txt` y añade una keyword por línea:
 
-(tildes)text  
+```text  
 ideas para ahorrar energía en casa  
 cómo elegir un portátil para programar  
 beneficios del ejercicio al aire libre  
-(tildes)
+```
 
----
+.........................................................................................
 
 ### 2. Titularizar
 Genera los títulos SEO a partir de las keywords:
 
-```
+```bash
 python "_2. Titularizar.py"  
 ```
 
 Este script crea un archivo `2. Titulos.csv` con los títulos optimizados según cada palabra clave.
 
----
+.........................................................................................
 
 ### 3. Generar artículos
 Crea los artículos completos en HTML:
 
-(tildes)bash  
+```bash  
 python "_3. Entradas.py"  
-(tildes)
+```
 
 Este script:  
 1. Lee `2. Titulos.csv`.  
 2. Llama a la API de OpenAI usando los prompts de `0. Sistema`, `1. Usuario` y `2. Asistente`.  
 3. Genera los artículos y los guarda en `3. Articulos.csv`.
 
----
+.........................................................................................
 
 ### 4. Añadir vídeos de YouTube
 Asocia vídeos relevantes a cada artículo:
 
-(tildes)bash  
+```bash  
 python "_4. YouTube.py"  
-(tildes)
+```
 
 Este script:  
 1. Lee `3. Articulos.csv`.  
 2. Busca un vídeo relevante en YouTube.  
 3. Inserta el código de vídeo en el contenido HTML del artículo.
 
----
+.........................................................................................
 
 ### 5. Asignar fechas y autores
 Ejecuta ambos scripts para completar la información de publicación:
 
-(tildes)bash  
+```bash  
 python "_5. Fechas.py"  
 python "_6. Autores.py"  
-(tildes)
+```
 
 Estos scripts añaden columnas de **fecha** y **autor** a `3. Articulos.csv`.
 
----
+.........................................................................................
 
 ### 6. Generar imágenes
 Crea las imágenes personalizadas para cada artículo:
 
-(tildes)bash  
+```bash  
 python "_7. Imagen.py"  
-(tildes)
+```
 
 Este script:  
 1. Lee el título o la información relevante del artículo.  
@@ -236,14 +248,14 @@ Este script:
 3. Guarda la imagen en `3. Portadas/`.  
 4. (Opcional) Añade la ruta de la imagen al CSV final.
 
----
+.........................................................................................
 
 ### Resultado final
 
 - `3. Articulos.csv` contiene los artículos listos para tu CMS.  
 - `3. Portadas/` guarda todas las imágenes generadas.
 
----
+.........................................................................................
 
 ## Personalización de prompts
 
@@ -265,6 +277,6 @@ Cada carpeta contiene los siguientes archivos:
 
 Puedes modificar cualquiera de estos archivos para cambiar el tono, estilo y reglas de redacción sin alterar el código Python.
 
----
+.........................................................................................
 
 **Made by Pedro Corchuelo**
