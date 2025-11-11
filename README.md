@@ -64,6 +64,7 @@ Al final del proceso, `3. Articulos.csv` contiene todos los artículos listos pa
 ## Estructura del proyecto
 
 Estructura actual de archivos y directorios:
+```text
 .
 │   .DS_Store
 │   0. GPTs.txt          ← Claves de API de OpenAI (una por línea)
@@ -105,6 +106,8 @@ Estructura actual de archivos y directorios:
         .DS_Store
         README.md
         requierements.txt
+        
+```
 
         
 ## Notas
@@ -161,25 +164,32 @@ sk-yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 1. Preparar las keywords
 
 Edita `1. Keywords.txt` y añade una keyword por línea:
+
 ideas para ahorrar energía en casa
+
 cómo elegir un portátil para programar
+
 beneficios del ejercicio al aire libre
 
 2. Titularizar
+
 python "_2. Titularizar.py"
+
 Este script generará un archivo `2. Titulos.csv` donde habrá genera un título SEO en base a cada keyword
 
 3. Generar artículos
 
 python "_3. Entradas.py"
+
 Este script:
-- 3.1 Lee 1. `2. Titulos.csv`
+- 3.1 Lee `2. Titulos.csv`
 - 3.2 Llama a la API de OpenAI usando los prompts de 0. Sistema, 1. Usuario y 2. Asistente.
 - 3.3 Genera el contenido y lo guarda en `3. Articulos.csv`
 
 4. Añadir vídeos de YouTube
 
 python "_4. YouTube.py"
+
 Este script:
 - 4.1 Lee 3. Articulos.csv.
 - 4.2 Busca un vídeo relevante para cada artículo.
@@ -188,12 +198,15 @@ Este script:
 5. Asignar fechas y autores
 
 python "_5. Fechas.py"
+
 python "_6. Autores.py"
+
 Estos scripts añaden columnas de fecha y autor a 3. Articulos.csv.
 
 6. Generar imágenes
 
 python "_7. Imagen.py"
+
 Este script:
 - 6.1 Lee el título o información relevante de cada artículo.
 - 6.2 Llama a la API de imágenes de OpenAI.
@@ -210,25 +223,25 @@ Personalización de prompts
 
 Los prompts se organizan en tres carpetas:
 
-- 0. Sistema: instrucciones de alto nivel para el modelo (rol del sistema).
+- 0 Sistema: instrucciones de alto nivel para el modelo (rol del sistema).
 
-- 1. Usuario: instrucciones que simulan la petición del usuario.
+- 1 Usuario: instrucciones que simulan la petición del usuario.
 
-- 2. Asistente: ejemplos o ajustes de tono del asistente.
+- 2 Asistente: ejemplos o ajustes de tono del asistente.
 
 Cada carpeta contiene ficheros separados para:
 
-- 0. Titulo.txt
+- 0 Titulo.txt
 
-- 1. Imagen.txt
+- 1 Imagen.txt
 
-- 2. Estructura.txt
+- 2 Estructura.txt
 
-- 3. Cuerpo.txt
+- 3 Cuerpo.txt
 
-- 4. Descripcion.txt
+- 4 Descripcion.txt
 
-- 5. Categoria.txt
+- 5 Categoria.txt
 
 Editando estos ficheros puedes cambiar el estilo de escritura, el enfoque del contenido, el tono de las descripciones y las reglas de clasificación sin tocar el código Python.
 
