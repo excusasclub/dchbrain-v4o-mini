@@ -105,6 +105,8 @@ Estructura actual de archivos y directorios:
         .DS_Store
         README.md
         requierements.txt
+
+        
 ## Notas
 
 El archivo de salida principal es `3. Articulos.csv` (generado por `_3. Entradas.py` y enriquecido en pasos posteriores).
@@ -119,7 +121,7 @@ Los directorios `0. Sistema`, `1. Usuario` y `2. Asistente` contienen los prompt
 - Google Chrome u otro navegador compatible si usas Selenium para la parte de YouTube  
 - `chromedriver` o el driver correspondiente instalado y accesible en el PATH  
 
-## Dependencias (recogidas en `requirements.txt`):
+## Dependencias 
 
 - `openai`  
 - `pandas`  
@@ -132,13 +134,14 @@ Los directorios `0. Sistema`, `1. Usuario` y `2. Asistente` contienen los prompt
 
 **Clonar el repositorio:**
 git clone https://github.com/tu-usuario/dchbrain-v4o-mini.git
+
 cd dchbrain-v4o-mini
 
-## Crear y activar un entorno virtual
+**Crear y activar un entorno virtual**
 python -m venv venv
-# Linux / macOS
+**Linux / macOS**
 source venv/bin/activate
-# Windows
+**Windows**
 venv\Scripts\activate
 
 ## Instalar dependencias:
@@ -146,8 +149,11 @@ pip install -r requirements.txt
 
 **Configuración de claves de API**
 El archivo 0. GPTs.txt almacena las claves de la API de OpenAI.
+
 Formato:
+
 sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 sk-yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 
 ## Uso
@@ -196,34 +202,34 @@ Este script:
 
 Resultado final:
 
- Articulos.csv con todos los campos necesarios para tu CMS.
+ - Articulos.csv con todos los campos necesarios para tu CMS.
 
- Portadas/ con las imágenes asociadas.
+ - Portadas/ con las imágenes asociadas.
 
 Personalización de prompts
 
 Los prompts se organizan en tres carpetas:
 
-0. Sistema: instrucciones de alto nivel para el modelo (rol del sistema).
+- 0. Sistema: instrucciones de alto nivel para el modelo (rol del sistema).
 
-1. Usuario: instrucciones que simulan la petición del usuario.
+- 1. Usuario: instrucciones que simulan la petición del usuario.
 
-2. Asistente: ejemplos o ajustes de tono del asistente.
+- 2. Asistente: ejemplos o ajustes de tono del asistente.
 
 Cada carpeta contiene ficheros separados para:
 
-0. Titulo.txt
+- 0. Titulo.txt
 
-1. Imagen.txt
+- 1. Imagen.txt
 
-2. Estructura.txt
+- 2. Estructura.txt
 
-3. Cuerpo.txt
+- 3. Cuerpo.txt
 
-4. Descripcion.txt
+- 4. Descripcion.txt
 
-5. Categoria.txt
+- 5. Categoria.txt
 
 Editando estos ficheros puedes cambiar el estilo de escritura, el enfoque del contenido, el tono de las descripciones y las reglas de clasificación sin tocar el código Python.
 
-made by Pedro Corchuelo
+**made by Pedro Corchuelo**
