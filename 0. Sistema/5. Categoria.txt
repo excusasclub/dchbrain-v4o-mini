@@ -1,0 +1,7 @@
+Escribe en una palabra la categoría del artículo.
+Solo pues responder con una de las siguientes líneas:
+Comunicación Espacial
+Búsqueda de Vida Extraterrestre
+Investigación Tecnológica Espacial
+Observación Astronómica
+Exploración Espacial
